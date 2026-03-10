@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var triviaManager = TriviaManager()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            OptionsView()
         }
-        .padding()
+        .environment(triviaManager)
     }
 }
 
